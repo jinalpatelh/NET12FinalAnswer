@@ -9,7 +9,8 @@ namespace ConsoleApp5
         {
             Adult _adult = new Adult { firstname = "John", lastname = "Reibero" };
             Child _child = new Child { firstname = "Lynda", lastname = "Rose" };
-            Person[] personarray = new Person[] { new Adult(), new Child() };
+            
+            Person[] personarray = new Person[] { _adult, _child};
             foreach(Person p in personarray)
             {
                 p.Print();
@@ -19,12 +20,12 @@ namespace ConsoleApp5
 
         public abstract class Person
         {
-            public  abstract string firstname { get; set; }
-            public abstract lastname { get; set; }
+            public string firstname { get; set; }
+            public string lastname { get; set; }
 
             public virtual void Print()
             {
-                Console.WriteLine($" Name of the Peson is : {this.firstname} {this.lastname} ");
+                Console.WriteLine($"Name of the Peson is : {this.firstname} {this.lastname} ");
             }
 
         }
@@ -32,8 +33,7 @@ namespace ConsoleApp5
         {
             public override void Print()
             {
-                base.Print();
-                //Console.WriteLine($"Name of the Adult is : {firstname} {lastname}");
+                Console.WriteLine($"Name of the Adult is : {firstname} {lastname}");
             }
         }
 
